@@ -1,7 +1,9 @@
 
 # platform-status-consul-backend
 
-This is a placeholder README.md for a new repository
+The goal of this service is to provide transparency into the work of the team and to present platform health indicators in an easily digestible way.
+
+This service was created to assisted Infra with migrating from AppMesh to Consul.
 
 ### License
 
