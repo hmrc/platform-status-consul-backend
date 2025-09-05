@@ -1,3 +1,18 @@
 # microservice specific routes
 
-GET        /hello-world             uk.gov.hmrc.platformstatusconsulbackend.controllers.MicroserviceHelloWorldController.hello
+GET        /status/iteration3             uk.gov.hmrc.platformstatusconsulbackend.controllers.MongoWriteController.iteration3()
+GET        /status/iteration5             uk.gov.hmrc.platformstatusconsulbackend.controllers.DesHealthcheckController.iteration5()
+GET        /status/iteration6             uk.gov.hmrc.platformstatusconsulbackend.controllers.MongoWriteController.iteration6()
+
+GET        /diag/vm                       uk.gov.hmrc.platformstatusconsulbackend.controllers.PrintVmDiagnosticController.printVmOptions()
+GET        /diag/memory-pools             uk.gov.hmrc.platformstatusconsulbackend.controllers.PrintVmDiagnosticController.getMemoryPoolInfo()
+
+POST       /measure                       uk.gov.hmrc.platformstatusconsulbackend.controllers.MeasureController.measureRequest()
+
+POST       /load/cpu/max                  uk.gov.hmrc.platformstatusconsulbackend.controllers.LoadTestController.cpuMax(threads: Option[Int], seconds: Long)
+POST       /load/cpu/tasks                uk.gov.hmrc.platformstatusconsulbackend.controllers.LoadTestController.cpuTasks(threads: Option[Int], count: Int)
+POST       /load/gc/:test                 uk.gov.hmrc.platformstatusconsulbackend.controllers.LoadTestController.gc(test: String, threads: Option[Int], count: Int)
+
+POST       /gc-experiment/:test           uk.gov.hmrc.platformstatusconsulbackend.controllers.GcExperimentController.experiment(test: String, count: Int ?= 1)
+
+GET        /gcinfo                        uk.gov.hmrc.platformstatusconsulbackend.controllers.GcInformationController.getGcInfo
